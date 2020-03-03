@@ -34,7 +34,7 @@ rm -rf firmware
 
 # Obtain official firmware from Linux kernel org
 cd $BUILD_DIR/rootfs/lib
-sudo proxychains git clone --depth 1 https://github.com/rpi-distro/firmware-nonfree.git
+sudo git clone --depth 1 https://github.com/rpi-distro/firmware-nonfree.git
 sudo mv firmware-nonfree firmware
 sudo rm -rf firmware/.git
 
