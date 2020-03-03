@@ -61,7 +61,7 @@ cat <<"EOM" > /dev/stdout | sudo tee rootfs/etc/hosts
 ::1       localhost ip6-localhost ip6loopback
 ff02::1   ip6-allnodes
 ff02::2   ip6-allrouters
-127.0.0.1  ubuntukylin.localdomain
+127.0.0.1 localhost.localdomain
 EOM
 
 HOST_HOSTNAME='hostname'
@@ -106,8 +106,8 @@ EOM
 
 cd $BUILD_DIR;
 
-echo "RASPKYLIN_VER=" .kylinrpi
-echo "ROOTFS=arm64" .kylinrpi
+echo "RASPKYLIN_VER=" > .kylinrpi
+echo "ROOTFS=arm64" >> .kylinrpi
 
 SuccessMessage "System configruation finished"
 
