@@ -16,15 +16,12 @@ function StdMessage() {
     echo -e "\033[37m$1\033[37m"
 }
 
-
-
 mkdir -p ubuntukylin-build;
 
 cd ubuntukylin-build;
 
 BUILD_DIR=$(pwd)
 
-#echo "Prepare to build UbuntuKylin rootfs"
 SuccessMessage "Prepare to build UbuntuKylin rootfs...";
 
 StdMessage "Install necessary dependencies";
@@ -46,7 +43,7 @@ sudo mkdir -p rootfs/usr/share/keyrings
 
 sudo qemu-debootstrap --arch arm64 focal rootfs http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/
 
-SuccessMessage "Ubuntu base system installed success".
+SuccessMessage "Ubuntu base system installed success"
 
 sudo mount -t sysfs sysfs rootfs/sys/
 sudo mount -t proc proc rootfs/proc/
@@ -109,6 +106,4 @@ cd $BUILD_DIR;
 echo "RASPKYLIN_VER=" > .kylinrpi
 echo "ROOTFS=arm64" >> .kylinrpi
 
-SuccessMessage "System configruation finished"
-
-exit 1;
+SuccessMessage "System configruation finished";
