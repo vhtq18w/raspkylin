@@ -31,8 +31,8 @@ StdMessage "Install necessary dependencies";
 
 sudo apt install -y install debootstrap binfmt-support qemu-user-static;
 
-if [ $1 == "debian" ]; then
-  sudo apt install -y ubuntu-archive-keyring;
+if [ -z $BUILD_ON_DEBIAN ]; then
+  sudo apt install -y ubuntu-archive-keyring
 fi
 
 SuccessMessage "Dependencies installed success";
